@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Висилица</title>
+</head>
+
+<body style="background-color: yellow ; font-size: 1em; display: flex; justify-content: center; align-items: center;">
+   <h1>«Виселица» — игра на угадывание слов.</h1>
+   <div>
+
+      <script>
+         var words = [
+            'программа',
+            'макака',
+            'прекрастный',
+            'оладушки'
+         ];
+
+         alert('«Виселица» — игра на угадывание слов. Например, если загаданное слово КАПУСТА, то отобразится семь «пустых мест», по одному на каждую букву слова: _ _ _ _ _ _ _ Нажмите Ок для генерации слова');
+         var word = words[Math.floor(Math.random() * words.length)];
+
+         var answerArray = [];
+
+         for (var i = 0; i < word.length; i++) {
+            answerArray[i] = '_';
+         };
+
+         var remainingLetters = word.length;
+
+         while (remainingLetters > 0) {
+
+            alert(answerArray.join(' '));
+
+            var guess = prompt('Угадайте букву или нажмите Отмена для выхода из игры.');
+            if (guess === null) {
+               break;
+            } else if (guess.length !== 1) {
+               alert('Пожалуйста, введите только одну букву.');
+            } else {
+               for (var j = 0; j < word.length; j++) {
+                  if (word[j] === guess) {
+                     answerArray[j] = guess;
+                     remainingLetters--;
+                  }
+               }
+            }
+
+         }
+
+         alert(answerArray.join(' '));
+         alert('Отлично, Было загадно слово ' + word);
+
+      </script>
+
+   </div>
+
+</body>
+
+</html>
