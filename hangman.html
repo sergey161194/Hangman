@@ -8,7 +8,8 @@
    <title>Висилица</title>
 </head>
 
-<body style="background-color: yellow ; font-size: 1em; display: flex; justify-content: center; align-items: center;">
+<body width="500px"
+   style="background-color: yellow ; font-size: 1em; display: flex; justify-content: center; align-items: center;">
    <h1>«Виселица» — игра на угадывание слов.</h1>
    <div>
 
@@ -17,7 +18,12 @@
             'программа',
             'макака',
             'прекрастный',
-            'оладушки'
+            'оладушки',
+            'форма',
+            'пресса',
+            'банк',
+            'явление',
+            'сведение'
          ];
 
          alert('«Виселица» — игра на угадывание слов. Например, если загаданное слово КАПУСТА, то отобразится семь «пустых мест», по одному на каждую букву слова: _ _ _ _ _ _ _ Нажмите Ок для генерации слова');
@@ -35,7 +41,7 @@
 
             alert(answerArray.join(' '));
 
-            var guess = prompt('Угадайте букву или нажмите Отмена для выхода из игры.');
+            var guess = prompt('Угадайте букву или нажмите Отмена для выхода из игры.').toLowerCase();
             if (guess === null) {
                break;
             } else if (guess.length !== 1) {
